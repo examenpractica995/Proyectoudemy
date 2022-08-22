@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProyectoUdemy.Controllers.Contexto;
 
@@ -11,9 +12,10 @@ using ProyectoUdemy.Controllers.Contexto;
 namespace ProyectoUdemy.Migrations
 {
     [DbContext(typeof(ApplicationBbContext))]
-    partial class ApplicationBbContextModelSnapshot : ModelSnapshot
+    [Migration("20220729004403_pelicula")]
+    partial class pelicula
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,47 +75,6 @@ namespace ProyectoUdemy.Migrations
                     b.ToTable("Peliculas");
                 });
 
-            modelBuilder.Entity("ProyectoUdemy.Entidades.PeliculasActores", b =>
-                {
-                    b.Property<int>("ActoresId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PeliculaId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ActorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Orden")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Personaje")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ActoresId", "PeliculaId");
-
-                    b.HasIndex("ActorId");
-
-                    b.HasIndex("PeliculaId");
-
-                    b.ToTable("PeliculasActores");
-                });
-
-            modelBuilder.Entity("ProyectoUdemy.Entidades.PeliculasGenero", b =>
-                {
-                    b.Property<int>("GeneroId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PeliculaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GeneroId", "PeliculaId");
-
-                    b.HasIndex("PeliculaId");
-
-                    b.ToTable("PeliculasGenero");
-                });
-
             modelBuilder.Entity("ProyectoUdemy.Genero", b =>
                 {
                     b.Property<int>("Id")
@@ -130,42 +91,6 @@ namespace ProyectoUdemy.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Generos");
-                });
-
-            modelBuilder.Entity("ProyectoUdemy.Entidades.PeliculasActores", b =>
-                {
-                    b.HasOne("ProyectoUdemy.Entidades.Actor", "Actor")
-                        .WithMany()
-                        .HasForeignKey("ActorId");
-
-                    b.HasOne("ProyectoUdemy.Entidades.Pelicula", "Pelicula")
-                        .WithMany()
-                        .HasForeignKey("PeliculaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Actor");
-
-                    b.Navigation("Pelicula");
-                });
-
-            modelBuilder.Entity("ProyectoUdemy.Entidades.PeliculasGenero", b =>
-                {
-                    b.HasOne("ProyectoUdemy.Genero", "Genero")
-                        .WithMany()
-                        .HasForeignKey("GeneroId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoUdemy.Entidades.Pelicula", "Pelicula")
-                        .WithMany()
-                        .HasForeignKey("PeliculaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Genero");
-
-                    b.Navigation("Pelicula");
                 });
 #pragma warning restore 612, 618
         }

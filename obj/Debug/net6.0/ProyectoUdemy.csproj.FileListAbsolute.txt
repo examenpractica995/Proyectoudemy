@@ -63,3 +63,8 @@ C:\Users\jpvga\Documents\ProyectoUdemy\bin\Debug\net6.0\Humanizer.dll
 C:\Users\jpvga\Documents\ProyectoUdemy\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\jpvga\Documents\ProyectoUdemy\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\jpvga\Documents\ProyectoUdemy\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\jpvga\Documents\ProyectoUdemy\bin\Debug\net6.0\ProyectoUdemy.staticwebassets.runtime.json
+C:\Users\jpvga\Documents\ProyectoUdemy\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\jpvga\Documents\ProyectoUdemy\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\jpvga\Documents\ProyectoUdemy\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\jpvga\Documents\ProyectoUdemy\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
